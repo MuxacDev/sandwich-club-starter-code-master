@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
@@ -36,8 +38,12 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
+
+
         String json = sandwiches[position];
-        Sandwich sandwich = JsonUtils.parseSandwichJson(json);
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        Sandwich sandwich = gson.fromJson(json, Sandwich.class);
         if (sandwich == null) {
             // Sandwich data unavailable
             closeOnError();
