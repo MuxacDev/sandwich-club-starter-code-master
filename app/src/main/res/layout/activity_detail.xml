@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.udacity.sandwichclub.DetailActivity"
     android:orientation="vertical"
-    >
+    android:id="@+id/details">
 
     <ImageView
         android:id="@+id/image_iv"
@@ -14,7 +14,9 @@
         android:layout_height="200dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/origin_tv"

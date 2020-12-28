@@ -32,6 +32,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+
+
+        //TextView details = findViewById(R.id.details);
+
+
+
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
         Intent intent = getIntent();
